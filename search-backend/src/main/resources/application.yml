@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: springboot-init
+  #  dev
+  profiles:
+    active: dev
+  # swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # xxxx为域名或ip 本地为localhost
+    url:
+    username:
+    password:
+  # Elasticsearch
+  elasticsearch:
+    uris: http://localhost:9200
+    username:
+    password:
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+server:
+  address: 0.0.0.0
+  port: 8202
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        max-age: 2592000
